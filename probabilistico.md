@@ -39,4 +39,7 @@ p=0.9: salida=51.5% unos | E[calls] simulado=11.07 | teórico=1/(p(1-p))=11.11
 ¿La salida siempre es ~50%? ¿Las llamadas crecen cuando p→0 o p→1?
 - La salida siempre es ~50%. Cuando p está cerca de 0 o de 1, las llamadas crecen.
 
+La salida del algoritmo es aproximadamente 50/50 para todos los valores de p, lo cual confirma que el generador sin sesgo funciona correctamente. Esto se debe a que los pares (1,0) y (0,1) tienen la misma probabilidad p(1-p), garantizando una distribución uniforme.
+
+Por otro lado, el número de llamadas a biasedRandom aumenta cuando p se acerca a 0 o a 1. Esto ocurre porque la probabilidad de obtener pares válidos disminuye, generando más descartes. Esto coincide con la fórmula teórica E[calls]=1/(p(1−p)), la cual crece cuando p se acerca a los extremos.
 
