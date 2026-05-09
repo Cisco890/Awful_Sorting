@@ -66,6 +66,11 @@ $$E[C] = \sum_{k=1}^{\infty} \frac{1}{k!} = e - 1 \approx 1.718282$$
 
 # Problema 6c 
 
+## En la sección 2.3 del paper "Sorting the Slow Way", ¿por qué la variable aleatoria I que cuenta el número de iteraciones del algoritmo tiene distribución geométrica?
+
+Cada iteración de bogo-sort hace un shuffle que produce una permutación uniformemente aleatoria entre las $n!$ posibles, así que la probabilidad de "acertar" (obtener el arreglo ordenado) es siempre $p = \frac{1}{n!}$, sin importar lo que pasó antes. Como cada intento es independiente y tiene la misma probabilidad de éxito, estamos ante experimentos de Bernoulli repetidos — que es exactamente la definición de distribución geométrica. Por eso $I \sim \text{Geom}(1/n!)$, con $E[I] = n!$.
+
+
 ## Resultados obtenidos (awful_sorting6c.js)
 
 | n | n! | E[iter] simulado | E[iter] teórico | E[swaps] simulado | E[swaps] teórico |
